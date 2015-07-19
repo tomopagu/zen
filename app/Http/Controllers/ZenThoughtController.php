@@ -17,9 +17,9 @@ class ZenThoughtController extends Controller
         $thought = Thought::findOrFail($day);
 
         return response()->json([
-            'day' => $day,
-            'thought_jp' => $thought->thought_jp,
-            'thought_en' => $thought->thought_en
+            "day" => $day,
+            "thought_jp" => $thought->thought_jp,
+            "thought_en" => $thought->thought_en
         ]);
     }
 
@@ -33,9 +33,9 @@ class ZenThoughtController extends Controller
     {
         $thought = Thought::findOrFail($day);
         return response()->json([
-            'day' => $day,
-            'thought_jp' => $thought->thought_jp,
-            'thought_en' => $thought->thought_en
+            "day" => $day,
+            "thought_jp" => $thought->thought_jp,
+            "thought_en" => $thought->thought_en
         ]);
     }
 }
