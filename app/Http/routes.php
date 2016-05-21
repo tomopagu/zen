@@ -11,5 +11,6 @@
 |
 */
 
-$app->get('/', 'ZenThoughtController@showTodayThought');
-$app->get('/{id}', 'ZenThoughtController@showDayThought');
+$app->get('/', 'ZenThoughtController@showIndex');
+$app->get('/api', 'ZenThoughtController@showTodayThought');
+$app->get('/api/{id}', 'ZenThoughtController@showDayThought');

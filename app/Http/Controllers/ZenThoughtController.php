@@ -7,6 +7,16 @@ use App\Thought;
 class ZenThoughtController extends Controller
 {
 	/**
+	 * Show Index Page.
+	 *
+	 * @return Response
+	 */
+	public function showIndex()
+	{
+		return view('index');
+	}
+
+	/**
 	 * Show the thought for today.
 	 *
 	 * @return Response
