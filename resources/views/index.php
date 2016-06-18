@@ -54,7 +54,7 @@
 
 	<script type="text/javascript">
 		const request = new XMLHttpRequest();
-		request.open('GET', 'http://zen.pagu.co/api', true);
+		request.open('GET', 'https://zen.pagu.co/api', true);
 
 		request.onload = () => {
 		if (request.status >= 200 && request.status < 400) {
