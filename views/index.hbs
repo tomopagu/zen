@@ -26,7 +26,7 @@
 			background-color: rgba(0, 0, 0, 0.2);
 			border-radius: 2px;
 
-			opacity: 0;
+			opacity: 1;
 		}
 		.zen.show {
 			opacity: 1;
@@ -47,41 +47,9 @@
 <body>
 	<div class="zen--container">
 		<div class="zen">
-			<h1 class="zen__jp"></h1>
-			<h1 class="zen__en"></h1>
+			<h1 class="zen__jp">{{{jpthought}}}</h1>
+			<h1 class="zen__en">{{{enthought}}}</h1>
 		</div>
 	</div>
-
-	<script type="text/javascript">
-		const request = new XMLHttpRequest();
-		request.open('GET', 'https://zen.pagu.co/api', true);
-
-		request.onload = () => {
-		if (request.status >= 200 && request.status < 400) {
-			// Success!
-			const data = JSON.parse(request.responseText);
-
-			const area = document.getElementsByClassName('zen')[0];
-			const jp = document.getElementsByClassName('zen__jp')[0];
-			const en = document.getElementsByClassName('zen__en')[0];
-
-			jp.innerHTML = data.thought_jp.replace('|', '<br>');
-			en.innerHTML = data.thought_en.replace('|', '<br>');
-
-			setTimeout(() => {
-				area.classList.add('show');
-			}, 500);
-		} else {
-			// We reached our target server, but it returned an error
-			console.log(request);
-		}
-		};
-
-		request.onerror = () => {
-		// There was a connection error of some sort
-		};
-
-		request.send();
-	</script>
 </body>
 </html>
