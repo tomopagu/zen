@@ -12,6 +12,7 @@
   },
   "author": "tomo@pagu",
   "dependencies": {
+    "cors": "^2.8.1",
     "express": "^4.14.0",
     "hbs": "^4.0.0",
     "lodash": "^4.15.0"

@@ -1,9 +1,11 @@
 var _ = require('lodash');
 var express = require('express');
+var cors = require('cors')
 var app = express();
 
 var zen = require('./zen.js').zen;
 
+app.use(cors());
 app.use(express.static('public'));
 app.set('views', './views')
 app.set('view engine', 'hbs');
