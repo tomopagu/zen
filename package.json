@@ -6,6 +6,9 @@
     "start": "node app.js",
     "deploy": "now"
   },
+  "now": {
+    "alias": "zen.uchuu.io"
+  },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/tomopagu/zen.git"
