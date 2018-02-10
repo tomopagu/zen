@@ -3,17 +3,13 @@
   "version": "3.0.0",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
-    "deploy": "now"
-  },
-  "now": {
-    "alias": "zen.uchuu.io"
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/tomopagu/zen.git"
   },
-  "author": "tomo@pagu",
+  "author": "tomo@uchuuio",
   "dependencies": {
     "cors": "^2.8.1",
     "express": "^4.14.0",

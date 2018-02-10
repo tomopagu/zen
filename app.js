@@ -2,6 +2,7 @@ var _ = require('lodash');
 var express = require('express');
 var cors = require('cors')
 var app = express();
+const { PORT = 3000 } = process.env;
 
 var zen = require('./zen.js').zen;
 
@@ -40,4 +41,4 @@ app.use(function(req, res, next) {
 	res.status(404).send('Sorry cant find that!');
 });
 
-app.listen(3000);
+app.listen(PORT);
