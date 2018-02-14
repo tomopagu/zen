@@ -1,15 +1,15 @@
-var _ = require('lodash');
-var zenMessage = require('./zen-message.js').zenMessage;
+const _ = require('lodash');
+const zenMessage = require('./zen-message.js').zenMessage;
 
 module.exports = function zen(dirtyDay) {
-    var day = _.toInteger(dirtyDay);
-    var thought = _.find(zenMessage, { 'day': day });
-    var jpthought = thought.thought_jp.replace(/\|/g, '<br>');
-    var enthought = thought.thought_en.replace(/\|/g, '<br>');
+  const day = _.toInteger(dirtyDay);
+  const thought = _.find(zenMessage, { day });
+  const jpthought = thought.thought_jp.replace(/\|/g, '<br>');
+  const enthought = thought.thought_en.replace(/\|/g, '<br>');
 
-    return {
-        day: thought.day,
-        jpthought: jpthought,
-        enthought: enthought,
-    };
+  return {
+    day: thought.day,
+    jpthought,
+    enthought,
+  };
 };
