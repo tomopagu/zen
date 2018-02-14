@@ -1,5 +1,5 @@
 const _ = require('lodash');
-const zenMessage = require('./zen-message.js').zenMessage;
+const { zenMessage } = require('./zen-message.js');
 
 module.exports = function zen(dirtyDay) {
   const day = _.toInteger(dirtyDay);
