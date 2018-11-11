@@ -1,4 +1,6 @@
+const fs = require('fs');
 const express = require('express');
+const Handlebars = require('handlebars');
 const cors = require('cors');
 
 const app = express();
@@ -8,14 +10,14 @@ const zen = require('./zen.js');
 
 app.use(cors());
 app.use(express.static('public'));
-app.set('views', './views');
-app.set('view engine', 'hbs');
 
 app.get('/', (req, res) => {
   const today = new Date().getDate();
   const todayThought = zen(today);
 
-  res.render('index', todayThought);
+  const template = Handlebars.compile(fs.readFileSync('./views/index.hbs', {encoding: 'utf8'}));
+  const result = template(todayThought);
+  res.send(result);
 });
 
 app.get('/api', (req, res) => {

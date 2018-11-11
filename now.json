@@ -1,3 +1,15 @@
 {
-  "alias": "zen.uchuu.io"
+  "version": 2,
+  "alias": "zen.uchuu.io",
+  "builds": [
+    { "src": "./app.js", "use": "@now/node-server" },
+    { "src": "./zen.js", "use": "@now/static" },
+    { "src": "./zen-message.js", "use": "@now/static" },
+    { "src": "./public/*", "use": "@now/static" },
+    { "src": "./views/*", "use": "@now/static" }
+  ],
+  "routes": [
+    { "src": "/", "dest": "/app.js" }
+  ],
+  "regions": ["bru"]
 }
